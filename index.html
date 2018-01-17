@@ -3,21 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>侣行</title>
+    <title>侣游</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta property="og:type" content="website">
-<meta property="og:title" content="侣行">
+<meta property="og:title" content="侣游">
 <meta property="og:url" content="http://安妹.我爱你/index.html">
-<meta property="og:site_name" content="侣行">
+<meta property="og:site_name" content="侣游">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="侣行">
+<meta name="twitter:title" content="侣游">
     
 
     
-        <link rel="alternate" href="/" title="侣行" type="application/atom+xml" />
+        <link rel="alternate" href="/" title="侣游" type="application/atom+xml" />
     
 
+    
+        <link rel="icon" href="/images/logo.png" />
     
 
     <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
@@ -48,7 +50,7 @@
         <div class="outer">
             <a href="/" id="logo">
                 <i class="logo"></i>
-                <span class="site-title">侣行</span>
+                <span class="site-title">侣游</span>
             </a>
             <nav id="main-nav">
                 
@@ -158,7 +160,7 @@
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                3
+                7
                 <span>标签</span>
             </div>
         </div>
@@ -215,7 +217,7 @@
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2015/01/17/北戴河之看海滑沙/">北戴河之看海滑沙</a>
+            <a class="article-title" href="/2018/01/17/北戴河之看海滑沙/">北戴河之看海滑沙</a>
         </h1>
     
 
@@ -224,14 +226,24 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2015/01/17/北戴河之看海滑沙/">
-            <time datetime="2015-01-17T20:30:20.000Z" itemprop="datePublished">2015-01-17</time>
+        <a href="/2018/01/17/北戴河之看海滑沙/">
+            <time datetime="2018-01-17T20:30:20.656Z" itemprop="datePublished">2018-01-17</time>
         </a>
     </div>
 
 
                         
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/城市/">城市</a>
+    </div>
+
                         
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/东北/">东北</a>, <a class="tag-link" href="/tags/城市/">城市</a>, <a class="tag-link" href="/tags/旅游/">旅游</a>
+    </div>
+
                     </div>
                 
             </header>
@@ -250,7 +262,148 @@
 
 </div>
 
-    <a data-url="http://安妹.我爱你/2015/01/17/北戴河之看海滑沙/" data-id="cjcjjkglt0000240rblubzfq1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://安妹.我爱你/2018/01/17/北戴河之看海滑沙/" data-id="cjcjlgyav0002bo0rc5749tgr" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-黄山三人行" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<a href="/2013/01/12/黄山三人行/" itemprop="url">
+            <img src="/2013/01/12/%E9%BB%84%E5%B1%B1%E4%B8%89%E4%BA%BA%E8%A1%8C/黄山.jpg" class="article-banner" />
+        </a>
+	
+
+
+
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2013/01/12/黄山三人行/">黄山三人行</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2013/01/12/黄山三人行/">
+            <time datetime="2013-01-12T05:12:35.000Z" itemprop="datePublished">2013-01-12</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/名山/">名山</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/名山/">名山</a>, <a class="tag-link" href="/tags/安徽/">安徽</a>, <a class="tag-link" href="/tags/旅游/">旅游</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>五岳归来不看山，黄山归来不看岳。<br></p>
+            <p class="article-more-link">
+                <a href="/2013/01/12/黄山三人行/#more">查看更多</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://安妹.我爱你/2013/01/12/黄山三人行/" data-id="cjcjlgyar0000bo0rf9u2b6hb" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -334,7 +487,7 @@
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2014/01/17/杭州西湖游/">杭州西湖游</a>
+            <a class="article-title" href="/2013/01/12/杭州西湖游/">杭州西湖游</a>
         </h1>
     
 
@@ -343,126 +496,7 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2014/01/17/杭州西湖游/">
-            <time datetime="2014-01-17T20:47:11.000Z" itemprop="datePublished">2014-01-17</time>
-        </a>
-    </div>
-
-
-                        
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://安妹.我爱你/2014/01/17/杭州西湖游/" data-id="cjcjjkglx0002240ru49u2re4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-黄山三人行" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2013/01/12/黄山三人行/">黄山三人行</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2013/01/12/黄山三人行/">
+        <a href="/2013/01/12/杭州西湖游/">
             <time datetime="2013-01-12T05:12:35.000Z" itemprop="datePublished">2013-01-12</time>
         </a>
     </div>
@@ -471,13 +505,13 @@
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/旅游/">旅游</a>
+        <a class="article-category-link" href="/categories/大川/">大川</a>
     </div>
 
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/名山/">名山</a>, <a class="tag-link" href="/tags/旅游/">旅游</a>, <a class="tag-link" href="/tags/黄山/">黄山</a>
+        <a class="tag-link" href="/tags/大川/">大川</a>, <a class="tag-link" href="/tags/旅游/">旅游</a>, <a class="tag-link" href="/tags/浙江/">浙江</a>
     </div>
 
                     </div>
@@ -488,8 +522,7 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>五岳归来不看山，黄山归来不看岳。</p>
-
+            
         
         </div>
         <footer class="article-footer">
@@ -499,7 +532,7 @@
 
 </div>
 
-    <a data-url="http://安妹.我爱你/2013/01/12/黄山三人行/" data-id="cjcjjkglz0003240rc6si8ud5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://安妹.我爱你/2013/01/12/杭州西湖游/" data-id="cjcjlgyaz0005bo0ru0c90isd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -588,7 +621,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2015/01/17/北戴河之看海滑沙/" class="thumbnail">
+                            <a href="/2018/01/17/北戴河之看海滑沙/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -598,28 +631,9 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2015/01/17/北戴河之看海滑沙/" class="title">北戴河之看海滑沙</a></p>
-                            <p class="item-date"><time datetime="2015-01-17T20:30:20.000Z" itemprop="datePublished">2015-01-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2014/01/17/杭州西湖游/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2014/01/17/杭州西湖游/" class="title">杭州西湖游</a></p>
-                            <p class="item-date"><time datetime="2014-01-17T20:47:11.000Z" itemprop="datePublished">2014-01-17</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/城市/">城市</a></p>
+                            <p class="item-title"><a href="/2018/01/17/北戴河之看海滑沙/" class="title">北戴河之看海滑沙</a></p>
+                            <p class="item-date"><time datetime="2018-01-17T20:30:20.656Z" itemprop="datePublished">2018-01-17</time></p>
                         </div>
                     </li>
                 
@@ -629,6 +643,25 @@
                             <a href="/2013/01/12/黄山三人行/" class="thumbnail">
     
     
+        <span style="background-image:url(/2013/01/12/%E9%BB%84%E5%B1%B1%E4%B8%89%E4%BA%BA%E8%A1%8C/黄山.jpg)" alt="黄山三人行" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/名山/">名山</a></p>
+                            <p class="item-title"><a href="/2013/01/12/黄山三人行/" class="title">黄山三人行</a></p>
+                            <p class="item-date"><time datetime="2013-01-12T05:12:35.000Z" itemprop="datePublished">2013-01-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2013/01/12/杭州西湖游/" class="thumbnail">
+    
+    
         <span class="thumbnail-image thumbnail-none"></span>
     
 </a>
@@ -636,8 +669,8 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/旅游/">旅游</a></p>
-                            <p class="item-title"><a href="/2013/01/12/黄山三人行/" class="title">黄山三人行</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/大川/">大川</a></p>
+                            <p class="item-title"><a href="/2013/01/12/杭州西湖游/" class="title">杭州西湖游</a></p>
                             <p class="item-date"><time datetime="2013-01-12T05:12:35.000Z" itemprop="datePublished">2013-01-12</time></p>
                         </div>
                     </li>
@@ -651,7 +684,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/旅游/">旅游</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/名山/">名山</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/城市/">城市</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大川/">大川</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -660,7 +693,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -669,7 +702,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/名山/">名山</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/旅游/">旅游</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黄山/">黄山</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/东北/">东北</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/名山/">名山</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/城市/">城市</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大川/">大川</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安徽/">安徽</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/旅游/">旅游</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浙江/">浙江</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -678,7 +711,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/名山/" style="font-size: 10px;">名山</a> <a href="/tags/旅游/" style="font-size: 10px;">旅游</a> <a href="/tags/黄山/" style="font-size: 10px;">黄山</a>
+            <a href="/tags/东北/" style="font-size: 10px;">东北</a> <a href="/tags/名山/" style="font-size: 10px;">名山</a> <a href="/tags/城市/" style="font-size: 10px;">城市</a> <a href="/tags/大川/" style="font-size: 10px;">大川</a> <a href="/tags/安徽/" style="font-size: 10px;">安徽</a> <a href="/tags/旅游/" style="font-size: 20px;">旅游</a> <a href="/tags/浙江/" style="font-size: 10px;">浙江</a>
         </div>
     </div>
 
